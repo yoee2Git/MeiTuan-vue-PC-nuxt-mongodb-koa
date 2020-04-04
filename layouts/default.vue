@@ -1,6 +1,8 @@
 <template>
-  <el-container>
-    <el-header>Header</el-header>
+  <el-container class="layout-default">
+    <el-header>
+      <my-header></my-header>
+    </el-header>
     <el-main>
       <nuxt />
     </el-main>
@@ -9,7 +11,12 @@
 </template>
 
 <script>
-export default {};
+import myHeader from '@/components/public/header/Index.vue'
+export default {
+  components: {
+    myHeader
+  }
+};
 </script>
 
 <style>

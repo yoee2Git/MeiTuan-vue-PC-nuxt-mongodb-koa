@@ -1,12 +1,12 @@
 <template>
   <div>
-    header page!!!
+    xxxsss
   </div>
 </template>
 
 <script>
 export default {
-  layout: "header"
+
 }
 </script>
 
