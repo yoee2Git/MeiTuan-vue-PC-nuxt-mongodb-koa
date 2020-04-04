@@ -26,7 +26,8 @@ module.exports = {
  //'element-ui/lib/theme-chalk/reset.css' 是element-ui自带的
   css: [
     'element-ui/lib/theme-chalk/reset.css',
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
