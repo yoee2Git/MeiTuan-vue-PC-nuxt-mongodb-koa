@@ -12,7 +12,6 @@
       <el-col :span="24">
         <has-style />
         <has-style />
-        <has-style />
       </el-col>
     </el-row>
   </div>

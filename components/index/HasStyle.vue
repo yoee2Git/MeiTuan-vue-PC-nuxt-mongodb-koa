@@ -27,7 +27,7 @@
   export default {
     data() {
       return {
-        kind: 'data',
+        kind: 'spa',
         list: {
           all: [
             {
