@@ -18,7 +18,7 @@
         width: auto;
         .wrapper {
           margin-top: 16px;
-          border: 1px solid #FE8C00;
+          border: 1px solid #FFC300;
           border-radius: 4px;
           width: 552px;
           box-sizing: border-box;
@@ -35,7 +35,7 @@
           .el-button {
             width: 88px;
             border: none;
-            background: #FE8C00;
+            background: #FFC300;
             font-size: 16px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -76,7 +76,7 @@
 
               &:hover {
                 background: #F8F8F8;
-                color: #FE8C00;
+                color: #FFC300;
               }
             }
 

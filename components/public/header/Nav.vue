@@ -70,87 +70,66 @@
           </dl>
           <dl class="movie">
             <dt>看电影</dt>
-            <dd>
-热映电影
-
-            </dd>
-            <dd>
-热门影院
-
-            </dd>
-            <dd>
-热映电影口碑榜
-
-            </dd>
-            <dd>
-最受期待电影
-
-            </dd>
-            <dd>
-国内票房榜
-
-            </dd>
-            <dd>
-北美票房榜
-
-            </dd>
-<dd>
-电影排行榜
-
-</dd>
+            <dd>热映电影</dd>
+            <dd>热门影院</dd>
+            <dd>热映电影口碑榜</dd>
+            <dd>最受期待电影</dd>
+            <dd>国内票房榜</dd>
+            <dd>北美票房榜</dd>
+            <dd>电影排行榜</dd>
           </dl>
           <dl class="app">
-              <dt>手机应用</dt>
-              <dd>
-                <a href="https://i.meituan.com/mobile/down/meituan" target="_blank">
-                  <img
-                    class="appicon"
-                    src="//s0.meituan.net/bs/fe-web-meituan/2d53095/img/appicons/meituan.png"
-                    title="美团app"
-                    alt="美团app"
-                  />
-                </a>
-              </dd>
-              <dd>
-                <a href="https://waimai.meituan.com/mobile/download/default" target="_blank">
-                  <img
-                    class="appicon"
-                    src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/waimai.png"
-                    title="外卖app"
-                    alt="外卖app"
-                  />
-                </a>
-              </dd>
-              <dd>
-                <a href="https://minsu.meituan.com/app/" target="_blank">
-                  <img
-                    class="appicon"
-                    src="https://p0.meituan.net/travelcube/162c3308d9622f6d9cfaa49e60be4dca8573.png"
-                    title="民宿app"
-                    alt="民宿app"
-                  />
-                </a>
-              </dd>
-              <dd>
-                <a href="https://www.dianping.com/events/m/index.htm" target="_blank">
-                  <img
-                    class="appicon"
-                    src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/dianping.png"
-                    title="点评app"
-                    alt="点评app"
-                  />
-                </a>
-              </dd>
-              <dd>
-                <a href="https://maoyan.com/app" target="_blank">
-                  <img
-                    class="appicon"
-                    src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/maoyan.png"
-                    title="猫眼app"
-                    alt="猫眼app"
-                  />
-                </a>
-              </dd>
+            <dt>手机应用</dt>
+            <dd>
+              <a href="https://i.meituan.com/mobile/down/meituan" target="_blank">
+                <img
+                  class="appicon"
+                  src="//s0.meituan.net/bs/fe-web-meituan/2d53095/img/appicons/meituan.png"
+                  title="美团app"
+                  alt="美团app"
+                />
+              </a>
+            </dd>
+            <dd>
+              <a href="https://waimai.meituan.com/mobile/download/default" target="_blank">
+                <img
+                  class="appicon"
+                  src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/waimai.png"
+                  title="外卖app"
+                  alt="外卖app"
+                />
+              </a>
+            </dd>
+            <dd>
+              <a href="https://minsu.meituan.com/app/" target="_blank">
+                <img
+                  class="appicon"
+                  src="https://p0.meituan.net/travelcube/162c3308d9622f6d9cfaa49e60be4dca8573.png"
+                  title="民宿app"
+                  alt="民宿app"
+                />
+              </a>
+            </dd>
+            <dd>
+              <a href="https://www.dianping.com/events/m/index.htm" target="_blank">
+                <img
+                  class="appicon"
+                  src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/dianping.png"
+                  title="点评app"
+                  alt="点评app"
+                />
+              </a>
+            </dd>
+            <dd>
+              <a href="https://maoyan.com/app" target="_blank">
+                <img
+                  class="appicon"
+                  src="//s1.meituan.net/bs/fe-web-meituan/404d350/img/appicons/maoyan.png"
+                  title="猫眼app"
+                  alt="猫眼app"
+                />
+              </a>
+            </dd>
           </dl>
         </div>
       </li>
