@@ -5,10 +5,10 @@
       [<nuxt-link to='/exit'>退出</nuxt-link>]
     </template>
     <template v-else>
-      <nuxt-link to="/login" class="login">
+      <nuxt-link to="/Login" class="login">
         立即登录
       </nuxt-link>
-      <nuxt-link to="/login" class="login">
+      <nuxt-link to="/Register" class="login">
         注册
       </nuxt-link>
     </template>

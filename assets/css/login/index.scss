@@ -5,9 +5,10 @@
       height: auto;
       margin: 40px auto 30px;
       .logo {
-        background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-retina.b95a7dd.png);
-        background-position: 0 !important;
-        background-size: contain !important;
+        background-image: url(//s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+        background-position: -188px -808px;
+        background-repeat: no-repeat;
+        background-size: initial;
         width: 82px;
         height: 54px;
         display: block;
@@ -16,12 +17,22 @@
     .login-panel {
       margin: 0 auto 70px;
       width: 980px;
+
+      position: relative;
       display: flex;
       .banner {
+        position: relative;
+        left: 20px;
         margin-right: 115px;
+        img{
+          position: absolute;
+          left: 30px;
+        }
       }
       .form {
+        position: relative;
         display: flex;
+        top: 30px;
         flex-direction: column;
         width: 270px;
         .tips {
