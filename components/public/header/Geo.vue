@@ -14,5 +14,4 @@ export default {
 </script>
 
 <style>
-  /* @import '@/assets/css/public/header/topbar.scss' */
 </style>

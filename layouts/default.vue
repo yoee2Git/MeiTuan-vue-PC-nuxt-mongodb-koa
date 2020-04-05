@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import myHeader from '@/components/public/header/Index.vue'
+import MyHeader from '@/components/public/header/Index.vue'
 export default {
   components: {
-    myHeader
+    MyHeader
   }
 };
 </script>

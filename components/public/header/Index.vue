@@ -1,14 +1,14 @@
 <template>
   <div>
-    <el-row :gutter="0">
-      <el-col :span="4">
+    <el-row :gutter="0" class="m-header">
+      <el-col :span="5">
         <geo />
       </el-col>
-      <el-col :span="6">
+      <el-col :span="5">
         <user />
       </el-col>
       <el-col :span="14">
-        <nav-bar />
+        <Nav />
       </el-col>
     </el-row>
   </div>
@@ -17,12 +17,12 @@
 <script>
 import Geo from "./Geo";
 import User from './User';
-import NavBar from './Nav'
+import Nav from './Nav';
 export default {
   components: {
     Geo,
     User,
-    NavBar
+    Nav
   }
 };
 </script>
