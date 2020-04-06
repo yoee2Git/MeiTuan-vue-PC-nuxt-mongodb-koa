@@ -153,25 +153,24 @@ export default {
       }
     },
     register() {
-      let _this = this;
       this.$refs["ruleForm"].validate(valid => {
         if (valid) {
           this.$axios
             .post("/users/signup", {
-              username: encodeURIComponent(_this.ruleForm.name),
-              password: CryptoJS.MD5(_this.ruleForm.pwd).toString(),
-              email: _this.ruleForm.email,
-              code: _this.ruleForm.code
+              username: encodeURIComponent(this.ruleForm.name),
+              password: CryptoJS.MD5(this.ruleForm.pwd).toString(),
+              email: this.ruleForm.email,
+              code: this.ruleForm.code
             })
             .then(({ status, data }) => {
               if (status === 200) {
                 if (data && data.code === 0) {
                   location.href = "/login";
                 } else {
-                  _this.errorMsg = data.msg;
+                  this.errorMsg = data.msg;
                 }
               } else {
-                _this.errorMsg = `服务器出错,错误码为: ${status}`;
+                this.errorMsg = `服务器出错,错误码为: ${status}`;
               }
             });
         }

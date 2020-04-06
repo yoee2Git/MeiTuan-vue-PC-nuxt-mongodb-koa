@@ -16,7 +16,7 @@ export default {
 			return '381945650@qq.com';
 		},
 		get pass() {
-			return 'bxfevifwrlgkbihc';
+			return 'iaqpnsnfqwxobihc';
 		},
 		get code() {
 			return () => {
@@ -30,6 +30,3 @@ export default {
 		}
 	}
 };
-
-// ldyweeatofxicajb;
-// ursilerxqwgobhff;
