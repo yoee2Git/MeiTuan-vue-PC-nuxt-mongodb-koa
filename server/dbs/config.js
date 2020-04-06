@@ -1,5 +1,5 @@
 export default {
-	dbs: 'mongodb://127.0.0.1:27017/users',
+	dbs: 'mongodb://127.0.0.1:27017/meituan',
 	redis: {
 		get host() {
 			return '127.0.0.1';
@@ -29,5 +29,5 @@ export default {
 	}
 };
 
-ldyweeatofxicajb;
-ursilerxqwgobhff;
+// ldyweeatofxicajb;
+// ursilerxqwgobhff;

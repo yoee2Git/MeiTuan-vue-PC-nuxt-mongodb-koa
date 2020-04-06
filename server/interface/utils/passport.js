@@ -9,14 +9,14 @@ passport.use(new LocalStrategy(async function(username,password,done){
   }
   let res = await UserModel.findOne(where);
 
-  if(res !== unll){
-    if(re.password === password){
+  if(res != unll){
+    if(res.password === password){
       return done(null,res);
     }else{
       return done(null,false,'密码错误');
-    }else{
-      return done(null,false,'用户不存在');
     }
+  }else{
+    return done(null,false,'用户不存在');
   }
 }))
 

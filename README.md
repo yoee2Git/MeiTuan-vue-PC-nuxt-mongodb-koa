@@ -23,17 +23,18 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 > 开始前的一些补充:
 > 1.目录
+> 
 > > `pages`文件夹是放一些页面的,在nuxt里pages的.vue文件将会自动映射到路由是,访问时可 localhost:3000/about 即可
 > > `layouts` 类似于模板的存放文件夹后者vue里的router-view组件标签
-> `server` 用于存放服务端代码
-> plugins 第三方插件
-
+> > `server` 用于存放服务端代码
+> > plugins 第三方插件
 
 //如果想用 esm模块化开发的话
 //1.将package.json文件 npm run dev 命令里添加 "--exec babel-node"
 //2.添加依赖 babel-preset-es2015 babel-cli -babel-core
 
 #### css sass的依赖
+
 npm i node-sass sass-loader --D  //安装后不用配置
 
 ### background-size
@@ -71,6 +72,28 @@ background-size: unset;
 
 > https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size
 
-
 在项目中遇到 background-size: initial;
 
+
+
+## ### Passport
+
+Passport是Node.js的身份验证中间件。Passport非常灵活和模块化，可以毫不费力地放入任何 基于Express的Web应用程序中。一套全面策略支持认证使用的用户名和密码
+
+[Passport.js](http://www.passportjs.org/)
+
+
+
+### # **[koa-redis](https://github.com/koajs/koa-redis)**
+
+具有Sentinel和集群支持的Koa会话中间件/缓存的Redis存储
+
+[GitHub - koajs/koa-redis: Redis storage for Koa session middleware/cache with Sentinel and Cluster support](https://github.com/koajs/koa-redis)
+
+
+
+### # NODEMAILER
+
+Nodemailer是Node.js应用程序的一个模块，可以方便地发送像蛋糕一样的电子邮件。该项目始于2010年，当时还没有发送电子邮件的合理选择，今天它是大多数Node.js用户默认求助的解决方案。
+
+[Nodemailer :: Nodemailer](https://nodemailer.com/about/)

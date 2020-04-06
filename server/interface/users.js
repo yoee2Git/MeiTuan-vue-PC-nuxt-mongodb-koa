@@ -6,6 +6,7 @@ import User from '../dbs/models/users';
 import Passport from './utils/passport';
 import EmailConfig from '../dbs/config';
 import axios from './utils/axios';
+import { info } from 'node-sass';
 
 let router = new Router({
 	prefix: '/users'
@@ -70,3 +71,108 @@ router.post('/signup', async (ctx) => {
     }
   }
 });
+
+router.post('/signin', async (ctx,next) => {
+  return Passport.authenticate('local',(err,user,info,status) => {
+    if(err){
+      ctx.body = {
+        code: -1,
+        msg: err
+      }
+    }else{
+      if(user){
+        ctx.body = {
+          code: 0,
+          msg: '登录成功',
+          user
+        }
+        return ctx.login(user);
+      }else{
+        ctx.body = {
+          code: 1,
+          msg: info
+        }
+      }
+    }
+  })(ctx,next);
+})
+
+router.post("/verify",async (ctx,next) => {
+  let username = ctx.request.body.username;
+  const saveExpire = await Store.hget(`nodemail:${username}`,'expire');
+  if(saveExpire && new Date.getTime() - saveExpire < 0){
+    ctx.body = {
+      code: -1,
+      msg: '验证请求过于频繁,1一分钟只能验证1次'
+    }
+    return false;
+  }
+
+  let transporter = nodeMailer.createTransport({
+    host: EmailConfig.smtp.host,
+    port: 587,
+    secure: false,
+    auth: {
+      user: EmailConfig.smtp.user,
+      pass: EmailConfig.smtp.pass
+    }
+  });
+
+  let recvInfo = {
+    code: EmailConfig.smtp.code(),
+    expire: EmailConfig.smtp.expire(),
+    email: ctx.request.body.email,
+    user: ctx.request.body.username
+  }
+  let mailOptions = {
+    from: `"认证邮件"<${EmailConfig.smtp.user}>`,
+    to: recvInfo.email,
+    subject: '<<!美团网>>注册码',
+    html: `您在!美团网申请的注册码是${recvInfo.code}`
+  }
+
+  await transporter.sendMail(mailOptions,(error,info) => {
+    if(error){
+      return console.log('err');
+    }else{
+      Store.hmset(`nodemail:${recvInfo.user}`,'code',recvInfo.code,'expire',recvInfo.expire,'email',recvInfo.email)
+    }
+  });
+  ctx.body = {
+    code: 0,
+    msg: '验证码已发送,有效时间为1分钟'
+  }
+})
+
+router.get('/exit',async (ctx,next) => {
+  await ctx.logout();
+
+  if(!ctx.isAuthenticated()){
+    ctx.body = {
+      code: 0
+    }
+  }else{
+    ctx.body = {
+      code: -1
+    }
+  }
+})
+
+
+router.get('/getUser',async (ctx,next) => {
+  if(ctx.isAuthenticated()){
+    const {username,email} = ctx.session.passport.user;
+
+    ctx.body = {
+      user: username,
+      email
+    }
+  }else{
+    ctx.body = {
+      user: '',
+      email: ''
+    }
+  }
+})
+
+export default router
