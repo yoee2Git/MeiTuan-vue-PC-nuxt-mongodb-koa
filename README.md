@@ -97,3 +97,27 @@ Passport是Node.js的身份验证中间件。Passport非常灵活和模块化，
 Nodemailer是Node.js应用程序的一个模块，可以方便地发送像蛋糕一样的电子邮件。该项目始于2010年，当时还没有发送电子邮件的合理选择，今天它是大多数Node.js用户默认求助的解决方案。
 
 [Nodemailer :: Nodemailer](https://nodemailer.com/about/)
+
+### Crypto.js
+
+用于加密标准的JavaScript库
+
+npm i crypto-js
+
+Usage
+ES6 import for typical API call signing use case:
+```js
+import sha256 from 'crypto-js/sha256';
+import hmacSHA512 from 'crypto-js/hmac-sha512';
+import Base64 from 'crypto-js/enc-base64';
+ 
+const message, nonce, path, privateKey; // ...
+const hashDigest = sha256(nonce + message);
+const hmacDigest = Base64.stringify(hmacSHA512(path + hashDigest, privateKey));
+
+or
+
+password: CryptoJS.MD5(pwd)
+```
+[https://github.com/brix/crypto-js]
+[https://www.npmjs.com/package/crypto-js]

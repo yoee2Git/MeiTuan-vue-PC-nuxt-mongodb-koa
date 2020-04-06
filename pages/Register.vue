@@ -23,7 +23,7 @@
           <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
         <el-form-item label="邮箱" prop="email">
-          <el-input @click="resetForm('ruleForm')">重置</el-input>
+          <el-input v-model="ruleForm.email"></el-input>
           <el-button size="mini" round @click="sendMsg">发送验证码</el-button>
           <span class="status">{{ statusMsg }}</span>
         </el-form-item>
@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import CryptoJS from "crypto-js";
 export default {
   layout: "Blank",
   data() {
@@ -94,7 +95,7 @@ export default {
             trigger: "blur"
           },
           {
-            validate(rule, value, callback) {
+            validator:(rule, value, callback) => {
               if (value === "") {
                 callback(new Error("请再次输入密码"));
               } else if (value !== this.ruleForm.pwd) {
@@ -110,8 +111,72 @@ export default {
     };
   },
   methods: {
-    sendMsg() {},
-    register() {}
+    //username  password  邮箱验证
+    sendMsg() {
+      let _this = this;
+      let nameErrMsg;
+      let emailErrMsg;
+      if (this.timerid) {
+        return false;
+      }
+      this.$refs["ruleForm"].validateField("name", errMsg => {
+        nameErrMsg = errMsg;
+      });
+      if (nameErrMsg) {
+        return false;
+      }
+
+      this.$refs["ruleForm"].validateField("email", errMsg => {
+        emailErrMsg = errMsg;
+      });
+
+      if (!nameErrMsg && !emailErrMsg) {
+        this.$axios
+          .post("/users/verify", {
+            username: encodeURIComponent(this.ruleForm.name),
+            email: this.ruleForm.email
+          })
+          .then(({ status, data }) => {
+            if (status === 200 && data && data.code === 0) {
+              let count = 60;
+              this.statusMsg = `验证已发送,剩余${count--}秒`;
+              this.timerid = setInterval(() => {
+                _this.statusMsg = `验证已发送,剩余${count--}秒`;
+                if (count === 0) {
+                  clearInterval(_this.timerid);
+                  _this.timerid = null;
+                  _this.statusMsg = "";
+                }
+              }, 1000);
+            }
+          });
+      }
+    },
+    register() {
+      let _this = this;
+      this.$refs["ruleForm"].validate(valid => {
+        if (valid) {
+          this.$axios
+            .post("/users/signup", {
+              username: encodeURIComponent(_this.ruleForm.name),
+              password: CryptoJS.MD5(_this.ruleForm.pwd).toString(),
+              email: _this.ruleForm.email,
+              code: _this.ruleForm.code
+            })
+            .then(({ status, data }) => {
+              if (status === 200) {
+                if (data && data.code === 0) {
+                  location.href = "/login";
+                } else {
+                  _this.errorMsg = data.msg;
+                }
+              } else {
+                _this.errorMsg = `服务器出错,错误码为: ${status}`;
+              }
+            });
+        }
+      });
+    }
   }
 };
 </script>

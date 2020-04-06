@@ -19,7 +19,9 @@ export default {
 			return 'bxfevifwrlgkbihc';
 		},
 		get code() {
-			return Math.random().toString(16).slice(2, 6).toUpperCase();
+			return () => {
+				return Math.random().toString(16).slice(2, 6).toUpperCase();
+			}
 		},
 		get expire() {
 			return () => {

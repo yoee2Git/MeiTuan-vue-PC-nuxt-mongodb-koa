@@ -9,7 +9,7 @@ passport.use(new LocalStrategy(async function(username,password,done){
   }
   let res = await UserModel.findOne(where);
 
-  if(res != unll){
+  if(res != null){
     if(res.password === password){
       return done(null,res);
     }else{
