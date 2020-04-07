@@ -14,8 +14,8 @@
       <el-col :span="6">.</el-col>
       <el-col :span="6">
         <el-form class="form">
-          <h4 class="tips" v-if="error">
-            <i>{{ error }}</i>
+          <h4 class="tips" v-if="errorMsg">
+            <i>{{ errorMsg }}</i>
           </h4>
           <p>
             <span>账号登录</span>
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import CryptoJS from 'crypto-js';
 export default {
   name: "",
   layout: "Blank",
@@ -46,12 +47,31 @@ export default {
     return {
       username: "",
       password: "",
-      error: "",
+      errorMsg: "",
       checked: ""
     };
   },
   methods: {
-    login() {}
+    login() {
+      console.log(111)
+      this.$axios.post('/users/signin',{
+        username: encodeURIComponent(this.username),
+        password: CryptoJS.MD5(this.password).toString()
+      }).then(({status,data}) => {
+        if(status === 200){
+          if(data && data.code === 0){
+            location.href = '/'
+          }else{
+          this.errorMsg = data.msg;
+          }
+        }else{
+          this.errorMsg = `服务器出错,错误码为: ${status}`
+        }
+        setTimeout(() => {
+          this.errorMsg = '';
+        },1500)
+      })
+    }
   }
 };
 </script>
