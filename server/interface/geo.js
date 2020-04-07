@@ -5,10 +5,10 @@ let router = new Router({
 	prefix: '/geo'
 });
 
-const sign = 'b735ab0b3e46d12ec07336ec5195a95f'
+const sign = 'f248cf6789e82fb1c23333168df703f0'
 
 router.get('/getPosition',async (ctx) => {
-  let { status, data: {province, city}} = await axios.get(`http://cp-tools.cn/geo/getPosition?sign=${sign}`); 
+  let { status, data: {province, city}} = await axios.get(`http://cp-tools.cn/geo/getPosition`); 
 
   if(status === 200){
     ctx.body = {

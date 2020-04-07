@@ -4,7 +4,7 @@ module.exports = {
   ** Headers of the page
   */
 	head: {
-		title: process.env.npm_package_name || '',
+		title: '北京美团网-北京美食_酒店_旅游_团购_电影_吃喝玩乐' || process.env.npm_package_name,
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
