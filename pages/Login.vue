@@ -24,7 +24,7 @@
           <el-input v-model="username"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-input v-model="password" type="password"></el-input>
+            <el-input v-model="password" type="password" @keyup.enter="login()"></el-input>
           </el-form-item>
           <div class="foot">
             <el-checkbox v-model="checked" label>7天内免登录</el-checkbox>
@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     login() {
-      console.log(111)
       this.$axios.post('/users/signin',{
         username: encodeURIComponent(this.username),
         password: CryptoJS.MD5(this.password).toString()

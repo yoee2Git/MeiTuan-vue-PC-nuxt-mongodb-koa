@@ -2,7 +2,6 @@
 import Koa from 'koa';
 
 // const Koa = require('koa')
-const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
 import mongoose  from 'mongoose';
@@ -13,8 +12,7 @@ import session from 'koa-generic-session';
 import json from 'koa-json';
 import passport from './interface/utils/passport';
 import users from "./interface/users";
-import router from './interface/users';
-
+import geo from './interface/geo'
 
 const app = new Koa()
 app.keys = ['some secret hurr','YOEE','MeiTuan'];
@@ -59,6 +57,7 @@ async function start () {
   }
 
   app.use(users.routes()).use(users.allowedMethods());
+  app.use(geo.routes()).use(geo.allowedMethods());
   
   app.use((ctx) => {
     ctx.status = 200

@@ -152,6 +152,7 @@ export default {
           });
       }
     },
+    //注册功能
     register() {
       this.$refs["ruleForm"].validate(valid => {
         if (valid) {
