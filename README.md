@@ -38,6 +38,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 npm i node-sass sass-loader --D  //安装后不用配置
 
 ### background-size
+
 background-size 设置背景图片大小。图片可以保有其原有的尺寸，或者拉伸到新的尺寸，或者在保持其原有比例的同时缩放到元素的可用空间的尺寸。
 
 ```css
@@ -81,6 +82,7 @@ Nodemailer是Node.js应用程序的一个模块，可以方便地发送像蛋糕
 [Nodemailer :: Nodemailer](https://nodemailer.com/about/)
 
 ### Crypto.js
+
 [https://github.com/brix/crypto-js]
 [https://www.npmjs.com/package/crypto-js]
 
@@ -109,6 +111,27 @@ password: CryptoJS.MD5(pwd)
 ## 项目踩坑记
 
 > 1. 配置时
-> 2.在注册页面和注册功能完成后,测试了几次成功的连接MongoDB和验证,
-> 但是当我打算Github 的时候测试发现获取验证码功能失效,注册邮箱收不到验证码,初步排查是 `Passport`与`Nodemailer`第三方依赖没配置好,最后发现是腾讯SMTP服务的授权码出现问题.
-> 
+>    2.在注册页面和注册功能完成后,测试了几次成功的连接MongoDB和验证,
+>    但是当我打算Github 的时候测试发现获取验证码功能失效,注册邮箱收不到验证码,初步排查是 `Passport`与`Nodemailer`第三方依赖没配置好,最后发现是腾讯SMTP服务的授权码出现问题.
+
+
+
+在写 `切换城市`的时候因为使用第三方 API,因为某特定网络原因一直无法获取数据,尝试换了一个网络后,成功获取到数据  0.o !
+
+
+
+
+
+在写下面这个方法的时候
+
+```js
+//刚开始写的是箭头函数
+_.debounce(async (query,cb) => {}
+querySearchAsync: _.debounce(async function(query,cb){}
+//导致一直无法获取
+allCities
+```
+
+
+
+![Image text](assets/img/68062287-5A92-4AFE-8040-895B5A1A6508.png)

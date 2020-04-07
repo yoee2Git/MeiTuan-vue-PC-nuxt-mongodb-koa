@@ -81,7 +81,6 @@ router.get('/province/:id', async (ctx) => {
 
 router.get('/city', async (ctx) => {
 	let { status, data: {city}} = await axios.get(`http://cp-tools.cn/geo/city?sign=${sign}`);
-
 	if (status === 200) {
 		ctx.body = {
 			city

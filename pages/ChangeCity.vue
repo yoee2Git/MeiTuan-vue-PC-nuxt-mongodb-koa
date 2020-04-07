@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import SelectCity from '@/components/changeCity/SleectCity'
+  import SelectCity from '@/components/changeCity/SelectCity'
   import HotCity from '@/components/changeCity/HotCity'
   import Category from '@/components/changeCity/Category'
 
