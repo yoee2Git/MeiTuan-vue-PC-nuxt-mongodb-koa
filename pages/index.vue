@@ -11,7 +11,7 @@
     <el-row>
       <el-col :span="24">
         <has-style />
-        <has-style />
+        <Homestay />
       </el-col>
     </el-row>
   </div>
@@ -21,11 +21,13 @@
 import SideMenu from "@/components/index/Menu"
 import Life from '@/components/index/Life'
 import HasStyle from '@/components/index/HasStyle'
+import Homestay from '@/components/index/Homestay.vue'
 export default {
   components: {
     SideMenu,
     Life,
-    HasStyle
+    HasStyle,
+    Homestay
   }
 };
 </script>
