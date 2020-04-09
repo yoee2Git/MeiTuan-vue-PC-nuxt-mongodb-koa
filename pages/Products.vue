@@ -27,6 +27,7 @@ export default {
       areas: [],
       point: []
     };
+    console.log(list)
   },
   components: {
     Crumbs,

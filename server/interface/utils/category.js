@@ -1,5 +1,10 @@
 const Router = require('koa-router');
-const axios = require('./utils/axios');
+import axios from "axios";
+
+const axiosIns = axios.create({
+  baseURL: `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}`,
+  timeout: 1000
+})
 
 let router = new Router({
 	prefix: '/category'
@@ -8,7 +13,7 @@ let router = new Router({
 const sign = 'b735ab0b3e46d12ec07336ec5195a95f';
 
 router.get('/crumbs', async (ctx) => {
-	let { status, data: {areas, types}} = await axios.get('http://cp-tools.cn/categroy/crumbs', {
+	let { status, data: {areas, types}} = await axiosIns.get('http://cp-tools.cn/categroy/crumbs', {
 		params: {
 			city: ctx.query.city.replace('市', '') || '北京',
 			sign

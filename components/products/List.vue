@@ -4,7 +4,7 @@
       <dd
         v-for="item in nav"
         :key="item.name"
-        :class="[item,name, item.active ? 'nav-active' : '']"
+        :class="[item.name, item.active ? 'nav-active' : '']"
         @click="handleNavSelect"
       >{{ item.txt }}</dd>
     </dl>
