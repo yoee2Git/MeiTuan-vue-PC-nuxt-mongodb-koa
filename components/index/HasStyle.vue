@@ -1,5 +1,5 @@
 <template>
-  <section class="m-has-style">
+  <section class="m-has-style" @click="go">
     <dl @mouseover="handleOver">
       <dt>有格调</dt>
       <dd :class="{active:kind === 'all'}" kind='all'>天津</dd>
@@ -139,6 +139,9 @@
       }
     },
     methods: {
+      go(){
+      this.$router.push('products')
+      },
       handleOver(e){
         // console.log(e.target);
         let dom = e.target;

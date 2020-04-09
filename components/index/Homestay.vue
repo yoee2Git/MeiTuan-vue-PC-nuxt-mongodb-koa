@@ -1,5 +1,5 @@
 <template>
-	<section class="m-has-style">
+	<section class="m-has-style" @click='go'>
 		<dl @mouseover="handleOver">
 			<dt>民宿推荐</dt>
 			<dd 
@@ -96,6 +96,9 @@ export default {
 		}
 	},
 	methods: {
+    go(){
+      this.$router.push('products')
+    },
 		handleOver: async function(e) {
 			let dom = e.target;
 			let tag = dom.tagName.toLowerCase();

@@ -1,5 +1,5 @@
 <template>
-	<div class="m-product-select">
+	<div class="m-product-select" @click="go">
 		<dl class="tab">
 			<dt>{{ name }}<i class="el-icon-arrow-down el-icon--right"></i></dt>
 			<dd>
@@ -26,6 +26,6 @@ export default {
 				return [];
 			}
 		}
-	}
+  }
 }
 </script>

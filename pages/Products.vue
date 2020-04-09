@@ -8,7 +8,7 @@
 			<list :list="list" />
 		</el-col>
 		<el-col :span="5">
-			<amap v-if="point.length" :width="230" :height="290" :point="point" />
+			<amap v-if="point.length" :width="230" :height="590" :point="point" />
 		</el-col>
 	</el-row>
 </template>
