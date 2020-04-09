@@ -13,9 +13,3 @@ export const actions = {
     commit('setPosition',position)
   }
 }
-
-export const getters = {
-  setPosition(state,val){
-    state.position = val;
-  }
-}
