@@ -13,8 +13,9 @@ import json from 'koa-json';
 import passport from './interface/utils/passport';
 import users from "./interface/users";
 import geo from './interface/geo'
-import search from './interface/utils/search'
-import category from './interface/utils/category.js'
+import search from './interface/search'
+
+import category from './interface/category'
 
 const app = new Koa()
 app.keys = ['some secret hurr','YOEE','MeiTuan'];

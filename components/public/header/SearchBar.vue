@@ -8,23 +8,34 @@
       </el-col>
       <el-col :span="15" class="center">
         <div class="wrapper">
-          <el-input v-model="search" @input="handleInput" @focus="handleFocus" @blur="handleBlur" placeholder="收搜商家或地点"></el-input>
+          <el-input
+            v-model="search"
+            @input="handleInput"
+            @focus="handleFocus"
+            @blur="handleBlur"
+            placeholder="收搜商家或地点"
+          ></el-input>
           <button class="el-button el-button--primary">
             <i class="el-icon-search"></i>
           </button>
           <dl class="hot-search" v-if="isHotSearch">
-            <dt>热门收搜</dt>
-            <dd v-for="(item,idx) in hotSearch" :key="idx">{{ item }}</dd>
+            <dt>热门搜索</dt>
+            <dd v-for="(item, idx) in $store.state.home.hotSearch.slice(0, 5)" :key="idx">
+              <a :href="'/products?keyword=' + encodeURIComponent(item.name)">{{ item.name }}</a>
+            </dd>
           </dl>
-          <dl class="search-list" style="display:block" v-if="isSearchList">
-            <dd v-for="(item,idx) in searchList" :key="idx">{{ item }}</dd>
+          <dl class="search-list" v-if="isSearchList">
+            <dd v-for="(item, idx) in searchList" :key="idx">
+              <a :href="'/products?keyword=' + encodeURIComponent(item.name)">{{ item.name }}</a>
+            </dd>
           </dl>
         </div>
         <p class="suggest">
-          <a href="#">贵州省德江县</a>
-          <a href="#">天坛</a>
-          <a href="#">故宫博物院</a>
-        </p>
+					<a :href="'/products?keyword=' + encodeURIComponent(item.name)" 
+							v-for="(item, idx) in $store.state.home.hotSearch.slice(0, 5)" :key="idx">
+						{{ item.name }}
+					</a>
+				</p>
         <ul class="nav">
           <li>
             <nuxt-link to="/" class="takeout">美团外卖</nuxt-link>
@@ -54,35 +65,50 @@
 </template>
 
 <script>
+import _ from "lodash";
+
 export default {
   name: "",
   data() {
     return {
       search: "",
       isFocus: false,
-      hotSearch: [1,2,3,4,5,56],
-      searchList: [3,4,6,7,67,67]
+      hotSearch: [],
+      searchList: []
     };
   },
   methods: {
-    handleFocus() {
+    handleFocus: function() {
       this.isFocus = true;
     },
-
-    handleBlur() {
-      setTimeout(() => {
-        this.isFocus = false;
-      },200)
+    handleBlur: function() {
+      let _self = this;
+      setTimeout(function() {
+        _self.isFocus = false;
+      }, 200);
     },
-    handleInput(){
-      console.log(111111)
-    }
+    handleInput: _.debounce(async function() {
+      let city = this.$store.state.geo.position.city.replace("市", "");
+      this.searchList = [];
+      if (this.search.length) {
+        let {
+          status,
+          data: { top }
+        } = await this.$axios.get("/search/top", {
+          params: {
+            input: this.search,
+            city
+          }
+        });
+        this.searchList = top.slice(0, 10);
+      }
+    }, 300)
   },
   computed: {
-    isHotSearch() {
+    isHotSearch: function() {
       return this.isFocus && !this.search;
     },
-    isSearchList() {
+    isSearchList: function() {
       return this.isFocus && this.search;
     }
   }

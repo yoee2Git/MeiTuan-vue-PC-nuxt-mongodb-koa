@@ -6,7 +6,6 @@ const axiosIns = axios.create({
   timeout: 1000
 })
 
-
 let router = new Router({
 	prefix: '/search'
 })
