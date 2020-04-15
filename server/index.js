@@ -21,7 +21,7 @@ const app = new Koa()
 app.keys = ['some secret hurr','YOEE','MeiTuan'];
 app.proxy = true;
 app.use(session({
-  key: 'meituan',
+  key: 'Yoee-MT',
   prefix: 'meituan:uid',
   store: new Redis(),
 }));
