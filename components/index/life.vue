@@ -51,14 +51,14 @@
 </template>
 
 <script>
-import Carousel from "./Carousel.vue";
+import carousel from "./Carousel.vue";
 export default {
   name: "Life",
   data() {
     return {};
   },
   components: {
-    Carousel
+    carousel
   }
 };
 </script>

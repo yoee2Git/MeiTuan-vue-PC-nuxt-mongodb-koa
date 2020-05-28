@@ -25,6 +25,7 @@
 
 <script>
   export default {
+    name:'HasStyle',
     data() {
       return {
         kind: 'spa',

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "",
+  name: "Menu",
   data() {
     return {
       kind: '',

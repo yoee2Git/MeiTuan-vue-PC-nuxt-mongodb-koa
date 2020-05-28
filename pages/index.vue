@@ -23,6 +23,7 @@ import Life from '@/components/index/Life.vue'
 import HasStyle from '@/components/index/HasStyle.vue'
 import Homestay from '@/components/index/Homestay.vue'
 export default {
+  name: 'index',
   components: {
     SideMenu,
     Life,
