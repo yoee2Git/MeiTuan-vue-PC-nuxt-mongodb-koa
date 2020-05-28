@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import crumbs from '@/components/products/crumbs.vue';
-import category from '@/components/products/category.vue';
-import list from '@/components/products/list.vue';
-import amap from '@/components/public/map.vue';
+import crumbs from '@/components/products/Crumbs.vue';
+import category from '@/components/products/Category.vue';
+import list from '@/components/products/List.vue';
+import amap from '@/components/public/Map.vue';
 
 export default {
 	components: {
@@ -79,7 +79,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/css/products/index.scss";
 </style>
 
