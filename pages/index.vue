@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import SideMenu from "@/components/index/Menu"
-import Life from '@/components/index/Life'
-import HasStyle from '@/components/index/HasStyle'
+import SideMenu from "@/components/index/Menu.vue"
+import Life from '@/components/index/Life.vue'
+import HasStyle from '@/components/index/HasStyle.vue'
 import Homestay from '@/components/index/Homestay.vue'
 export default {
   components: {

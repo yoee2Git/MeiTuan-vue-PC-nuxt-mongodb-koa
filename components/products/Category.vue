@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import popSelect from './popSelect.vue';
+import popSelect from './PopSelect.vue';
 export default {
 	components: {
 		popSelect
