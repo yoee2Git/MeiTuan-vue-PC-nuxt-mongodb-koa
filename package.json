@@ -39,7 +39,7 @@
     "babel-preset-env": "^1.7.0",
     "node-sass": "^4.13.1",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.0.2"
+    "sass-loader": "^8.0.2"
   },
   "main": "nuxt.config.js",
   "keywords": [],
