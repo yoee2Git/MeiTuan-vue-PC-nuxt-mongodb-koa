@@ -17,10 +17,10 @@ module.exports = {
 			user: 'root',
 			host: '47.114.87.244',
 			ref: 'origin/master',
-			repo: 'https://github.com/yoee2Git/meituan-pc-nuxt.git',
+			repo: 'https://gitee.com/yoee/meituan-pc-nuxt.git',
 			path: '/var/www/meituan',
 			'pre-deploy': 'git fetch --all',
-			'post-deploy': 'cnpm install && cnpm run build && cnpm start && pm2 startOrRestart deploy.conf.js --env production'
+			'post-deploy': 'cnpm install && pm2 startOrRestart deploy.conf.js --env production'
 		}
 	}
 }
