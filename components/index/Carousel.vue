@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'Carousel',
+    name: 'carousel',
     data() {
       return {
         list: [

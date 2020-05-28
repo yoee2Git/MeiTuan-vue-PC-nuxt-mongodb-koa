@@ -53,7 +53,7 @@
 <script>
 import carousel from "@/components/index/Carousel.vue";
 export default {
-  name: "Life",
+  name: "life",
   data() {
     return {};
   },
