@@ -4,7 +4,9 @@
       <my-header></my-header>
     </el-header>
     <el-main>
-      <nuxt />
+      <keep-alive>
+        <nuxt />
+      </keep-alive>
     </el-main>
     <el-footer height='auto'>
       <my-footer />
@@ -23,5 +25,5 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
 </style>
