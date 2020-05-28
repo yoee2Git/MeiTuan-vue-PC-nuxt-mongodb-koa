@@ -181,7 +181,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/css/register/index.scss";
 @import "@/assets/css/login/index.scss";
 </style>

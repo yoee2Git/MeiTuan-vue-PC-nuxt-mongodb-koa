@@ -5,13 +5,13 @@
         <side-menu />
       </el-col>
       <el-col :span="19">
-        <Life />
+        <life />
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="24">
         <has-style />
-        <Homestay />
+        <homestay />
       </el-col>
     </el-row>
   </div>
@@ -32,6 +32,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/css/index/index.scss'
 </style>
