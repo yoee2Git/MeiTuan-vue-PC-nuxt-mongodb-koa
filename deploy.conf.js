@@ -20,7 +20,7 @@ module.exports = {
 			repo: 'https://gitee.com/yoee/meituan-pc-nuxt.git',
 			path: '/var/www/meituan',
 			'pre-deploy': 'git fetch --all',
-			'post-deploy': 'cnpm install && pm2 startOrRestart deploy.conf.js --env production'
+			'post-deploy': 'cnpm install && cnpm run build && cnpm start && pm2 startOrRestart deploy.conf.js --env production'
 		}
 	}
 }
