@@ -16,7 +16,7 @@
 		  class="m-category-section">
 			<dt :id="'city-' + item.title">{{ item.title }}</dt>
 			<dd>
-				<span v-for="city in item.cities">
+				<span v-for="city in item.cities" :key="city">
 					{{ city }}
 				</span>
 			</dd>
