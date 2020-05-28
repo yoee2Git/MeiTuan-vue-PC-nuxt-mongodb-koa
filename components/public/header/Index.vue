@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import TopBar from "./TopBar";
-import SearchBar from "./SearchBar"
+import TopBar from "./TopBar.vue";
+import SearchBar from "./SearchBar.vue"
   export default {
     name: '',
     data() {

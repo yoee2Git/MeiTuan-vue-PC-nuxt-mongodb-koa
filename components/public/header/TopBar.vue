@@ -8,16 +8,16 @@
         <user />
       </el-col>
       <el-col :span="14">
-        <Nav />
+        <nav />
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import Geo from "./Geo";
-import User from './User';
-import Nav from './Nav';
+import Geo from "./Geo.vue";
+import User from './User.vue';
+import Nav from './Nav.vue';
 export default {
   components: {
     Geo,

@@ -88,7 +88,7 @@ export default {
       }, 200);
     },
     handleInput: _.debounce(async function() {
-      let city = this.$store.state.geo.position.city.replace("市", "");
+      let city = this.$store.state.geo.position.city;
       this.searchList = [];
       if (this.search.length) {
         let {
