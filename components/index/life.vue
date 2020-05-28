@@ -2,7 +2,7 @@
   <div class="m-life">
     <el-row>
       <el-col :span="14">
-        <Carousel />
+        <carousel />
       </el-col>
       <el-col :span="4">
         <div class="m-life-pic"></div>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import Carousel from "@/components/index/Carousel";
+import Carousel from "@/components/index/Carousel.vue";
 export default {
   name: "",
   data() {
