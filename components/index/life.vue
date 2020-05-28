@@ -51,9 +51,9 @@
 </template>
 
 <script>
-import Carousel from "@/components/index/Carousel.vue";
+import Carousel from "./Carousel.vue";
 export default {
-  name: "",
+  name: "Life",
   data() {
     return {};
   },
