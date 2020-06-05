@@ -4,7 +4,7 @@ import Koa from 'koa';
 // const Koa = require('koa')
 const { Nuxt, Builder } = require('nuxt')
 
-import mongoose  from 'mongoose';
+import mongoose from 'mongoose';
 import dbConfig from './dbs/config';
 import Redis from 'koa-redis';
 import bodyParser from 'koa-bodyparser';
@@ -18,7 +18,7 @@ import search from './interface/search'
 import category from './interface/category'
 
 const app = new Koa()
-app.keys = ['some secret hurr','YOEE','MeiTuan'];
+app.keys = ['some secret hurr', 'YOEE', 'MeiTuan'];
 app.proxy = true;
 app.use(session({
   key: 'Yoee-MT',
@@ -31,8 +31,8 @@ app.use(bodyParser({
 app.use(json());
 
 mongoose.set('useCreateIndex', true);
-mongoose.connect(dbConfig.dbs,{
-  useNewUrlParser:true
+mongoose.connect(dbConfig.dbs, {
+  useNewUrlParser: true
 })
 
 app.use(passport.initialize());
@@ -43,13 +43,13 @@ app.use(passport.session());
 const config = require('../nuxt.config.js')
 config.dev = app.env !== 'production'
 
-async function start () {
+async function start() {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
 
   const {
     host = process.env.HOST || '127.0.0.1',
-    port = process.env.PORT || 3000
+    port = process.env.PORT || 3333
   } = nuxt.options.server
 
   await nuxt.ready()
@@ -63,7 +63,7 @@ async function start () {
   app.use(geo.routes()).use(geo.allowedMethods());
   app.use(category.routes()).use(category.allowedMethods());
   app.use(search.routes()).use(search.allowedMethods());
-  
+
   app.use((ctx) => {
     ctx.status = 200
     ctx.respond = false // Bypass Koa's built-in response handling
@@ -71,7 +71,7 @@ async function start () {
     nuxt.render(ctx.req, ctx.res)
   })
 
-  
+
 
   app.listen(port, host)
   consola.ready({
